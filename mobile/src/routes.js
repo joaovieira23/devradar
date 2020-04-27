@@ -12,7 +12,7 @@ function Routes() {
   <NavigationContainer>
     <Stack.Navigator>
       <Stack.Screen name="DevRadar" component={Main}/>
-      <Stack.Screen name="Perfil no GitHub" component={Profile} />
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   </NavigationContainer>
   );

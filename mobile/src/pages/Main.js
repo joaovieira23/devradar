@@ -3,7 +3,7 @@ import { StyleSheet, Image, View, Text } from 'react-native'
 import MapView, { Marker, Callout } from 'react-native-maps';
 import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 
-function Main() {
+function Main({ navigation }) {
   const [currentRegion, setCurrentRegion] = useState(null);
 
   useEffect(() => {
@@ -39,7 +39,9 @@ function Main() {
       <Marker coordinate={{ latitude: -23.677324,  longitude: -46.542673 }}>
         <Image style={styles.avatar} source={{ uri: 'https://avatars1.githubusercontent.com/u/45154356?s=460&u=3ae25f40bfcf6c661c7fad6f27ea1f471acf88ac&v=4' }}/>
 
-        <Callout>
+        <Callout onPress={() => {
+          navigation.navigate('Profile', { github_username: 'joaovieira23' });
+        }}>
           <View style={styles.callout}>
             <Text style={styles.devName}>João Victor Vieira de Andrade</Text>
             <Text style={styles.devBio}>Developer: Data Science, Java, C#, SQL, Oracle PL/SQL, HTML5, CSS3, JavaScript, Git e GitHub, React, React Native, Node.js, AWS</Text>
